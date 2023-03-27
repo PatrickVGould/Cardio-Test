@@ -88,7 +88,7 @@ submit = st.button("Submit")
 
 # Recommendations
 if submit:
-    st.write("**Medical Report**")
+    st.write("**Cardiometabolic Recommendations Report**")
     st.write("Patient Name: ", patient_name)
     st.write("Age: ", age)
     st.write("Sex: ", sex)
@@ -106,22 +106,22 @@ if submit:
 
     if diet == "Yes":
         st.write("Diet:")
-        st.write("- Discretionary foods")
-        st.write("- Vegetables and legumes/beans")
+        st.write("- Decrease in discretionary foods")
+        st.write("- Increase in vegetables and legumes/beans")
         st.write("- Consider referral to a Dietitian")
         st.write("- eatforhealth.gov.au")
         st.write(" ")
 
     st.write("Activity:")
-    st.write("- Sedentariness")
-    st.write("- Physical activity")
-    st.write("- Physical Activity Guidelines")
+    st.write("- Decrease sedentariness")
+    st.write("- Increase physical activity")
+    st.write("- Refer to the Physical Activity Guidelines")
     st.write("- Consider referral to an Exercise Physiologist")
     st.write(" ")
 
     if BMI >= 25 or weight_increase == "Yes" or (sex == "Male" and waist_circ >= 94) or (sex == "Female" and waist_circ >= 80) or (ethnicity == "Yes" and sex == "Male" and waist_circ >= 90) or waist_increase == "Yes":
         st.write("Weight and BMI:")
-        st.write("- Consider metformin and/or GLP receptor agonist if BMI is greater than or equal to 25 or weight_increase is 'Yes' or (sex is 'Male' and waist_circ is greater than or equal to 94) or (sex is 'Female' and waist_circ is greater than or equal to 80) or (ethnicity is 'Yes' and sex is 'Male' and waist_circ is greater than or equal to 90) or waist_increase is 'Yes'")
+        st.write("- Consider metformin and/or GLP receptor agonist ")
         st.write("- Consider intensive intervention if BMI is greater than or equal to 30")
         st.write(" ")
 
