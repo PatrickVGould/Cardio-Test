@@ -57,18 +57,19 @@ with col3:
 
 # Blood lipids questions
 st.header("Blood Lipids")
-col1, col2, col3, col4, col5, col6 = st.columns(6)
+col1, col2, col3 = st.columns(3)
 with col1:
     TC = st.number_input("What is the person's TC?")
 with col2:
     LDL = st.number_input("What is the person's LDL?")
 with col3:
     HDL = st.number_input("What is the person's HDL?")
-with col4:
+col1, col2, col3 = st.columns(3)
+with col1:
     RPG = st.number_input("What is the person's RPG?")
-with col5:
+with col2:
     non_HDL = st.number_input("What is the person's non-HDL?")
-with col6:
+with col3:
     TRIG = st.number_input("What is the person's TRIG?")
 
 # Sleep questions
