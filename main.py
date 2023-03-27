@@ -68,12 +68,11 @@ if submit:
         st.write("Consider referral to a Dietitian")
         st.write("eatforhealth.gov.au")
 
-    if activity == "No":
-        st.subheader("Activity")
-        st.write("Sedentariness")
-        st.write("Physical activity")
-        st.write("Physical Activity Guidelines")
-        st.write("Consider referral to an Exercise Physiologist")
+    st.subheader("Activity")
+    st.write("Sedentariness")
+    st.write("Physical activity")
+    st.write("Physical Activity Guidelines")
+    st.write("Consider referral to an Exercise Physiologist")
 
     if BMI >= 25 or weight_increase == "Yes" or (sex == "Male" and waist_circ >= 94) or (sex == "Female" and waist_circ >= 80) or (ethnicity == "Yes" and sex == "Male" and waist_circ >= 90) or waist_increase == "Yes":
         st.subheader("Weight, BMI")
@@ -90,6 +89,7 @@ if submit:
 
     if HbA1c >= 6 or FPG >= 5.6 or AUSDRISK >= 12:
         st.subheader("Glucose")
+        
     if HbA1c >= 6.4 or FPG >= 7.0 or RPG >= 11.1:
         st.write("Consider endocrine referral")
         st.write("Consider metformin")
