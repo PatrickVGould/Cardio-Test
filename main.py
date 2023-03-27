@@ -74,7 +74,7 @@ with col3:
 
 # Sleep questions
 st.header("Sleep")
-col1, col2, col3 - st.columns(3)
+col1, col2, col3 = st.columns(3)
 with col1:
     neck_circ = st.number_input("What is the person's neck circumference in cm?")
 with col2:
