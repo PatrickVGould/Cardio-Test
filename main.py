@@ -48,55 +48,56 @@ neck_circ = st.number_input("What is the person's neck circumference in cm?")
 daytime_tiredness = st.radio("Does the person have daytime tiredness?", ["Yes", "No"])
 snoring = st.radio("Does the person have loud snoring or stop breathing during sleep?", ["Yes", "No"])
 
-# Recommendations
-st.header("Recommendations")
-if smoking == "Yes":
-    st.subheader("Smoking")
-    st.write("Individualised smoking cessation program")
-    st.write("Use Mindgardens Tobacco Treatment Framework")
-    st.write("quitnow.gov.au")
-    st.write("icanquit.com.au")
-
-if diet == "Yes":
-    st.subheader("Diet")
-    st.write("Discretionary foods")
-    st.write("Vegetables and legumes/beans")
-    st.write("Consider referral to a Dietitian")
-    st.write("eatforhealth.gov.au")
-
-if activity == "No":
-    st.subheader("Activity")
-    st.write("Sedentariness")
-    st.write("Physical activity")
-    st.write("Physical Activity Guidelines")
-    st.write("Consider referral to an Exercise Physiologist")
-
-if BMI >= 25 or weight_increase == "Yes" or (sex == "Male" and waist_circ >= 94) or (sex == "Female" and waist_circ >= 80) or (ethnicity == "Yes" and sex == "Male" and waist_circ >= 90) or waist_increase == "Yes":
-    st.subheader("Weight, BMI")
-    st.write("Consider metformin and/or GLP receptor agonist")
-
-if BMI >= 30:
-    st.subheader("Weight, BMI")
-    st.write("Consider intensive intervention")
-
-if systolic_bp >= 140 or diastolic_bp >= 90:
-    st.subheader("Blood Pressure")
-    st.write("Consider antihypertensive medication")
-    st.write("Limit salt intake in diet")
-
-if HbA1c >= 6 or FPG >= 5.6 or AUSDRISK >= 12:
-    st.subheader("Glucose")
-if HbA1c >= 6.4 or FPG >= 7.0 or RPG >= 11.1:
-    st.write("Consider endocrine referral")
-    st.write("Consider metformin")
-
-if TC >= 4 or LDL >= 2 or HDL <= 1 or non_HDL >= 2.5 or TRIG >= 1.7:
-    st.subheader("Blood Lipids")
-    st.write("Consider lipid lowering therapy")
-
-if BMI >= 35 or neck_circ >= 40 or daytime_tiredness == "Yes" or snoring == "Yes":
-    st.subheader("Sleep")
-    st.write("Consider referral for a sleep study. If they have mild-moderate sleep apnoea, target weight loss. If they have severe sleep apnoea, consider CPAP therapy.")
-
 # Submit button
 submit = st.button("Submit")
+
+# Recommendations
+if submit:
+    st.header("Recommendations")
+    if smoking == "Yes":
+        st.subheader("Smoking")
+        st.write("Individualised smoking cessation program")
+        st.write("Use Mindgardens Tobacco Treatment Framework")
+        st.write("quitnow.gov.au")
+        st.write("icanquit.com.au")
+
+    if diet == "Yes":
+        st.subheader("Diet")
+        st.write("Discretionary foods")
+        st.write("Vegetables and legumes/beans")
+        st.write("Consider referral to a Dietitian")
+        st.write("eatforhealth.gov.au")
+
+    if activity == "No":
+        st.subheader("Activity")
+        st.write("Sedentariness")
+        st.write("Physical activity")
+        st.write("Physical Activity Guidelines")
+        st.write("Consider referral to an Exercise Physiologist")
+
+    if BMI >= 25 or weight_increase == "Yes" or (sex == "Male" and waist_circ >= 94) or (sex == "Female" and waist_circ >= 80) or (ethnicity == "Yes" and sex == "Male" and waist_circ >= 90) or waist_increase == "Yes":
+        st.subheader("Weight, BMI")
+        st.write("Consider metformin and/or GLP receptor agonist")
+
+    if BMI >= 30:
+        st.subheader("Weight, BMI")
+        st.write("Consider intensive intervention")
+
+    if systolic_bp >= 140 or diastolic_bp >= 90:
+        st.subheader("Blood Pressure")
+        st.write("Consider antihypertensive medication")
+        st.write("Limit salt intake in diet")
+
+    if HbA1c >= 6 or FPG >= 5.6 or AUSDRISK >= 12:
+        st.subheader("Glucose")
+    if HbA1c >= 6.4 or FPG >= 7.0 or RPG >= 11.1:
+        st.write("Consider endocrine referral")
+        st.write("Consider metformin")
+
+    if TC >= 4 or LDL >= 2 or HDL <= 1 or non_HDL >= 2.5 or TRIG >= 1.7:
+        st.subheader("Blood Lipids")
+        st.write("Consider lipid lowering therapy")
+
+    if BMI >= 35 or neck_circ >= 40 or daytime_tiredness == "Yes" or snoring == "Yes":
+        st.subheader("Sleep")
+        st.write("Consider referral for a sleep study. If they have mild-moderate sleep apnoea, target weight loss. If they have severe sleep apnoea, consider CPAP therapy.")
