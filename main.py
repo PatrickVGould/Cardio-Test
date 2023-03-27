@@ -6,6 +6,7 @@ st.subheader("An early intervention framework for people on psychotropic medicat
 
 # Demographic questions
 st.header("Demographics")
+patient_name = st.text_input("What is the person's name?")
 col1, col2, col3 = st.columns(3)
 with col1:
     sex = st.radio("What is the person's sex?", ["Male", "Female", "Other"])
@@ -87,51 +88,70 @@ submit = st.button("Submit")
 
 # Recommendations
 if submit:
-    st.header("Recommendations")
+    st.write("**Medical Report**")
+    st.write("Patient Name: ", patient_name)
+    st.write("Age: ", age)
+    st.write("Sex: ", sex)
+
+    st.write(" ")
+    st.write("**Recommendations**")
+
     if smoking == "Yes":
-        st.subheader("Smoking")
-        st.write("Individualised smoking cessation program")
-        st.write("Use Mindgardens Tobacco Treatment Framework")
-        st.write("quitnow.gov.au")
-        st.write("icanquit.com.au")
+        st.write("Smoking:")
+        st.write("- Individualised smoking cessation program")
+        st.write("- Use Mindgardens Tobacco Treatment Framework")
+        st.write("- quitnow.gov.au")
+        st.write("- icanquit.com.au")
+        st.write(" ")
 
     if diet == "Yes":
-        st.subheader("Diet")
-        st.write("Discretionary foods")
-        st.write("Vegetables and legumes/beans")
-        st.write("Consider referral to a Dietitian")
-        st.write("eatforhealth.gov.au")
+        st.write("Diet:")
+        st.write("- Discretionary foods")
+        st.write("- Vegetables and legumes/beans")
+        st.write("- Consider referral to a Dietitian")
+        st.write("- eatforhealth.gov.au")
+        st.write(" ")
 
-    st.subheader("Activity")
-    st.write("Sedentariness")
-    st.write("Physical activity")
-    st.write("Physical Activity Guidelines")
-    st.write("Consider referral to an Exercise Physiologist")
+    st.write("Activity:")
+    st.write("- Sedentariness")
+    st.write("- Physical activity")
+    st.write("- Physical Activity Guidelines")
+    st.write("- Consider referral to an Exercise Physiologist")
+    st.write(" ")
 
     if BMI >= 25 or weight_increase == "Yes" or (sex == "Male" and waist_circ >= 94) or (sex == "Female" and waist_circ >= 80) or (ethnicity == "Yes" and sex == "Male" and waist_circ >= 90) or waist_increase == "Yes":
-        st.subheader("Weight, BMI")
-        st.write("Consider metformin and/or GLP receptor agonist")
-
-    if BMI >= 30:
-        st.subheader("Weight, BMI")
-        st.write("Consider intensive intervention")
+        st.write("Weight and BMI:")
+        st.write("- Consider metformin and/or GLP receptor agonist if BMI is greater than or equal to 25 or weight_increase is 'Yes' or (sex is 'Male' and waist_circ is greater than or equal to 94) or (sex is 'Female' and waist_circ is greater than or equal to 80) or (ethnicity is 'Yes' and sex is 'Male' and waist_circ is greater than or equal to 90) or waist_increase is 'Yes'")
+        st.write("- Consider intensive intervention if BMI is greater than or equal to 30")
+        st.write(" ")
 
     if systolic_bp >= 140 or diastolic_bp >= 90:
-        st.subheader("Blood Pressure")
-        st.write("Consider antihypertensive medication")
-        st.write("Limit salt intake in diet")
+        st.write("Blood Pressure:")
+        st.write("- Consider antihypertensive medication")
+        st.write("- Limit salt intake in diet")
+        st.write(" ")
 
     if HbA1c >= 6 or FPG >= 5.6 or AUSDRISK >= 12:
-        st.subheader("Glucose")
-        
+        st.write("Glucose:")
+        st.write("- Monitor and manage blood glucose levels closely")
+        st.write("- Consider referral to an endocrinologist if necessary")
+        st.write(" ")
+
     if HbA1c >= 6.4 or FPG >= 7.0 or RPG >= 11.1:
-        st.write("Consider endocrine referral")
-        st.write("Consider metformin")
+        st.write("Glucose:")
+        st.write("- Consider metformin")
+        st.write("- Consider referral to an endocrinologist if necessary")
+        st.write(" ")
 
     if TC >= 4 or LDL >= 2 or HDL <= 1 or non_HDL >= 2.5 or TRIG >= 1.7:
-        st.subheader("Blood Lipids")
-        st.write("Consider lipid lowering therapy")
+        st.write("Blood Lipids:")
+        st.write("- Consider lipid lowering therapy")
+        st.write(" ")
 
     if BMI >= 35 or neck_circ >= 40 or daytime_tiredness == "Yes" or snoring == "Yes":
-        st.subheader("Sleep")
-        st.write("Consider referral for a sleep study. If they have mild-moderate sleep apnoea, target weight loss. If they have severe sleep apnoea, consider CPAP therapy.")
+        st.write("Sleep:")
+        st.write("- Consider referral for a sleep study")
+        st.write("- If mild-moderate sleep apnoea is diagnosed, target weight loss")
+        st.write("- If severe sleep apnoea is diagnosed, consider CPAP")
+        st.write(" ")
+
