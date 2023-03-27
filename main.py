@@ -92,6 +92,67 @@ if submit:
     st.write("Patient Name: ", patient_name)
     st.write("Age: ", age)
     st.write("Sex: ", sex)
+    st.write(" ")
+    st.write("**Recommendations**")
+
+    col1, col2 = st.beta_columns(2)
+
+    if st.checkbox("Smoking"):
+        with col1:
+            st.write("- Individualised smoking cessation program")
+            st.write("- Use Mindgardens Tobacco Treatment Framework")
+            st.write("- quitnow.gov.au")
+            st.write("- icanquit.com.au")
+
+    if st.checkbox("Diet"):
+        with col1:
+            st.write("- Decrease in discretionary foods")
+            st.write("- Increase in vegetables and legumes/beans")
+        with col2:
+            st.write("- Consider referral to a Dietitian")
+            st.write("- eatforhealth.gov.au")
+
+    with col1:
+        st.write("Activity:")
+        st.write("- Decrease sedentariness")
+        st.write("- Increase physical activity")
+        st.write("- Refer to the Physical Activity Guidelines")
+    with col2:
+        st.write("- Consider referral to an Exercise Physiologist")
+
+    if st.checkbox("Weight and BMI"):
+        with col1:
+            st.write("- Consider metformin and/or GLP receptor agonist ")
+        with col2:
+            st.write("- Consider intensive intervention if BMI is greater than or equal to 30")
+
+    if st.checkbox("Blood Pressure"):
+        with col1:
+            st.write("- Consider antihypertensive medication")
+            st.write("- Limit salt intake in diet")
+
+    if st.checkbox("Glucose (HbA1c, FPG, AUSDRISK)"):
+        with col1:
+            st.write("- Monitor and manage blood glucose levels closely")
+        with col2:
+            st.write("- Consider referral to an endocrinologist if necessary")
+
+    if st.checkbox("Glucose (HbA1c, FPG, RPG)"):
+        with col1:
+            st.write("- Consider metformin")
+        with col2:
+            st.write("- Consider referral to an endocrinologist if necessary")
+
+    if st.checkbox("Blood Lipids"):
+        with col1:
+            st.write("- Consider lipid lowering therapy")
+
+    if st.checkbox("Sleep"):
+        with col1:
+            st.write("- Consider referral for a sleep study")
+            st.write("- If mild-moderate sleep apnoea is diagnosed, target weight loss")
+        with col2:
+            st.write("- If severe sleep apnoea is diagnosed, consider CPAP")
 
     st.write(" ")
     st.write("**Recommendations**")
