@@ -104,15 +104,15 @@ if submit:
     st.write("Medication review (consider antipsychotic switching; review medications and rationalise any polypharmacy).")
 
     if smoking == "Yes":
-        st.write("Smoking:")
-        st.write("*Interventions:*")
-        st.write("- Individualised smoking cessation program")
-        st.write("- Use Mindgardens Tobacco Treatment Framework")
-        st.write("- quitnow.gov.au")
-        st.write("- icanquit.com.au")
+        st.write("**Smoking:**")
+        st.write("  *Interventions:*")
+        st.write("      - Individualised smoking cessation program")
+        st.write("      - Use Mindgardens Tobacco Treatment Framework")
+        st.write("      - quitnow.gov.au")
+        st.write("      - icanquit.com.au")
         st.write(" ")
-        st.write("*Targets:*")
-        st.write("Smoking prevention or cessation")
+        st.write("  *Targets:*")
+        st.write("      Smoking prevention or cessation")
 
     if diet == "Yes":
         st.write("Diet:")
