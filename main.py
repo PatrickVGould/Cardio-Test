@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 
 # Add logo to page
 st.image("mg_logo.png", width=200)
@@ -145,10 +144,15 @@ if submit:
     st.write("Medication review (consider antipsychotic switching; review medications and rationalise any polypharmacy).")
 
     if smoking == "Yes":
-        data = {'Smoking': ['Interventions', 'Individualised smoking cessation program', 'Use Mindgardens Tobacco Treatment Framework', 'quitnow.gov.au', 'icanquit.com.au', 'Targets', 'Smoking prevention or cessation']}
-        df = pd.DataFrame(data)
-
-        st.write(df.style.hide_index())
+        st.write("**Smoking:**")
+        st.write("  *Interventions:*")
+        st.write("      - Individualised smoking cessation program")
+        st.write("      - Use Mindgardens Tobacco Treatment Framework")
+        st.write("      - quitnow.gov.au")
+        st.write("      - icanquit.com.au")
+        st.write(" ")
+        st.write("  *Targets:*")
+        st.write("      Smoking prevention or cessation")
 
     if diet == "Yes":
         st.write("Diet:")
