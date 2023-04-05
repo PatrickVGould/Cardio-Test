@@ -168,7 +168,7 @@ if submit:
     st.write("Medication review (consider antipsychotic switching; review medications and rationalise any polypharmacy).")
 
     if smoking == "Yes":
-        st.markdown("""
+        st.markdown(body = """
         ### **Smoking:**
         #### *Interventions:*
         <li>
@@ -181,7 +181,7 @@ if submit:
         </li>
             #### *Targets:*
                 - Smoking prevention or cessation
-        """)
+        """, unsafe_allow_html = True)
 
     if diet == "Yes":
         st.markdown("""
