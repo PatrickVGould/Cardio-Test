@@ -15,7 +15,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     sex = st.radio("What is the person's sex?", ["Male", "Female", "Other"])
 with col2:
-    age = st.number_input("What is the person's age?")
+    age = st.number_input(label="What is the person's age?", step=1, min_value=0, max_value=120)
 with col3:
     ethnicity = st.radio("Is the person of any of the following ethnicities? South Asian, Chinese, Japanese, Ethnic South and Central Americans", ["Yes", "No"])
 
