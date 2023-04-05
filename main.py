@@ -170,13 +170,13 @@ if submit:
     if smoking == "Yes":
         st.markdown("""
         ### **Smoking:**
-        #### *Interventions:*
-            - Individualised smoking cessation program
-            - Use Mindgardens Tobacco Treatment Framework
-            - quitnow.gov.au
-            - icanquit.com.au
-        #### *Targets:*
-            - Smoking prevention or cessation
+            #### *Interventions:*
+                - Individualised smoking cessation program
+                - Use Mindgardens Tobacco Treatment Framework
+                - quitnow.gov.au
+                - icanquit.com.au
+            #### *Targets:*
+                - Smoking prevention or cessation
         """)
 
     if diet == "Yes":
