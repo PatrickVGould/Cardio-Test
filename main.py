@@ -162,20 +162,20 @@ if submit:
         st.write("Snoring: ", snoring)
 
     st.write(" ")
-    st.write("**Recommendations**")
+    st.write("# **Recommendations**")
 
     st.write("Intensify and individualise structured nutritional counselling and lifestyle interventions. Refer for investigation, diagnosis and treatment by appropriate clinician if necessary.")
     st.write("Medication review (consider antipsychotic switching; review medications and rationalise any polypharmacy).")
 
     if smoking == "Yes":
         st.markdown("""
-        **Smoking:**
-            - *Interventions:*
+        ## **Smoking:**
+            ### - *Interventions:*
                 - Individualised smoking cessation program
                 - Use Mindgardens Tobacco Treatment Framework
                 - quitnow.gov.au
                 - icanquit.com.au
-            - *Targets:*
+            ### - *Targets:*
                 - Smoking prevention or cessation
         """)
 
