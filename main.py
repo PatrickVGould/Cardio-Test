@@ -90,13 +90,15 @@ with col2:
 with col3:
     hdl_options = ['<1 mmol/L','≥1 mmol/L']
     hdl = st.radio(label = "What is the person's HDL?", options = hdl_options)
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 with col1:
     non_hdl_options = ['<2.5 mmol/L','≥2.5 mmol/L']
     non_hdl = st.radio(label = "What is the person's non-HDL?", options = non_hdl_options)
 with col2:
     trig_options = ['<1.7 mmol/L','≥1.7 mmol/L']
     trig = st.radio(label = "What is the person's TRIG?", options = trig_options)
+with col3:
+    placeholder = st.empty()
 
 # Sleep questions
 st.header("Sleep")
