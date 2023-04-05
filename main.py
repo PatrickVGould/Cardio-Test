@@ -25,7 +25,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     smoking = st.radio("Is the person a current smoker (including tobacco, THC, vaping, shisha)?", ["Yes", "No"])
 with col2:
-    diet = st.radio("Does the person have a poor diet?", ["Yes", "No"])
+    diet = st.radio(label="Does the person have a poor diet?", options = ["Yes", "No"], help="Poor diet includes high intake of processed foods, red meat, sugar-sweetened beverages, and low intake of vegetables, fruit, wholegrains, legumes/beans, and fish.")
 with col3:
     activity = st.radio("Does the person have more than 30 minutes physical activity on most days?", ["Yes", "No"])
 
