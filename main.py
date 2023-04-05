@@ -33,11 +33,11 @@ with col3:
 st.header("Obesity")
 col1, col2, col3 = st.columns(3)
 with col1:
-    BMI = st.number_input("What is the person's BMI?")
+    BMI = st.number_input(label = "What is the person's BMI?", step=1, min_value=0, max_value=120)
 with col2:
     weight_increase = st.radio("Has the person had a weight increase of greater than 5kg over the past 3 months?", ["Yes", "No"])
 with col3:
-    waist_circ = st.number_input("What is the person's waist circumference in cm?")
+    waist_circ = st.number_input(label = "What is the person's waist circumference in cm?", step=1, min_value=0, max_value=120)
 col1, col2 = st.columns(2)
 with col1:
     waist_increase = st.radio("Has the person had an increase in waist circumference of over 5cm in the past 3 months?", ["Yes", "No"])
