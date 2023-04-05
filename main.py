@@ -161,93 +161,85 @@ if submit:
         st.write("Daytime Tiredness: ", daytime_tiredness)
         st.write("Snoring: ", snoring)
 
-st.write("# **Recommendations**")
+    st.write(" ")
+    st.write("**Recommendations**")
 
-# Create a two-column layout
-col1, col2 = st.columns(2)
+    st.write("Intensify and individualise structured nutritional counselling and lifestyle interventions. Refer for investigation, diagnosis and treatment by appropriate clinician if necessary.")
+    st.write("Medication review (consider antipsychotic switching; review medications and rationalise any polypharmacy).")
 
-# Main recommendations
-with col1:
-    st.write("### General Recommendations:")
-    st.write("- Intensify and individualise structured nutritional counselling and lifestyle interventions. Refer for investigation, diagnosis and treatment by appropriate clinician if necessary.")
-    st.write("- Medication review (consider antipsychotic switching; review medications and rationalise any polypharmacy).")
-
-# Add expandable sections for each recommendation category
-with col2:
     if smoking == "Yes":
-        with st.expander("Smoking"):
-            st.markdown("""
-                **Interventions:**
+        st.markdown("""
+        - **Smoking:**
+            - *Interventions:*
                 - Individualised smoking cessation program
                 - Use Mindgardens Tobacco Treatment Framework
-                - [quitnow.gov.au](https://www.quitnow.gov.au/)
-                - [icanquit.com.au](https://www.icanquit.com.au/)
-                
-                **Targets:**
+                - quitnow.gov.au
+                - icanquit.com.au
+            - *Targets:*
                 - Smoking prevention or cessation
-            """)
+        """)
+
+        st.write("**Smoking:**")
+        st.write("  *Interventions:*")
+        st.write("      - Individualised smoking cessation program")
+        st.write("      - Use Mindgardens Tobacco Treatment Framework")
+        st.write("      - quitnow.gov.au")
+        st.write("      - icanquit.com.au")
+        st.write(" ")
+        st.write("  *Targets:*")
+        st.write("      Smoking prevention or cessation")
 
     if diet == "Yes":
-        with st.expander("Diet"):
-            st.markdown("""
-                - Decrease in discretionary foods
-                - Increase in vegetables and legumes/beans
-                - Consider referral to a Dietitian
-                - [eatforhealth.gov.au](https://www.eatforhealth.gov.au/)
-            """)
-
+        st.write("Diet:")
+        st.write("- Decrease in discretionary foods")
+        st.write("- Increase in vegetables and legumes/beans")
+        st.write("- Consider referral to a Dietitian")
+        st.write("- eatforhealth.gov.au")
+        st.write(" ")
     if activity == "No":
-        with st.expander("Activity"):
-            st.markdown("""
-                - Decrease sedentariness
-                - Increase physical activity
-                - Refer to the Physical Activity Guidelines
-                - Consider referral to an Exercise Physiologist
-            """)
+        st.write("Activity:")
+        st.write("- Decrease sedentariness")
+        st.write("- Increase physical activity")
+        st.write("- Refer to the Physical Activity Guidelines")
+        st.write("- Consider referral to an Exercise Physiologist")
+        st.write(" ")
 
-    if ([condition for condition in [bmi in ['25-29', '30-34', '≥35'], bmi in ['≥23', '23-30', '30-34', '≥35'] and ethnicity == 'Yes', weight_increase == "Yes", sex == "Male" and waist_circ == "≥94", sex == "Female" and waist_circ == "≥80", ethnicity == "Yes" and sex == "Male" and waist_circ == "≥90", waist_increase == "Yes"]]):
-        with st.expander("Weight and BMI"):
-            st.markdown("""
-                - Consider metformin and/or GLP receptor agonist""")
-            if bmi == "≥35" or bmi == "30-34":
-                st.markdown("""- Consider intensive intervention if BMI is greater than or equal to 30
-                """)
-            else:
-                st.markdown("""
-                """)
+    if (bmi in ['25-29','30-34','≥35'] or (bmi in ['≥23', '23-30','30-34','≥35']) and ethnicity=='Yes') or (weight_increase == "Yes") or (sex == "Male" and waist_circ >= 94) or (sex == "Female" and waist_circ >= 80) or (ethnicity == "Yes" and sex == "Male" and waist_circ >= 90) or waist_increase == "Yes":
+        st.write("Weight and BMI:")
+        st.write("- Consider metformin and/or GLP receptor agonist ")
+        if bmi in ["30-34","≥35"]:
+            st.write("- Consider intensive intervention if BMI is greater than or equal to 30")
+        st.write(" ")
 
     if systolic_bp == '≥140 mmHg' or diastolic_bp == '≥90 mmHg':
-        with st.expander("Blood Pressure"):
-            st.markdown("""
-                - Consider antihypertensive medication
-                - Limit salt intake in diet
-            """)
+        st.write("Blood Pressure:")
+        st.write("- Consider antihypertensive medication")
+        st.write("- Limit salt intake in diet")
+        st.write(" ")
 
-    if any([condition for condition in [hba1c in ['6.0%-6.4% (42-47 mmol/mol)', '≥6.4% (48 mmol/mol)'], fpg in ['5.6-6.9 mmol/L', '≥7.0 mmol/L'], ausdrisk == '≥12']]):
-        with st.expander("Glucose"):
-            if hba1c == "≥6.4% (48 mmol/mol)" or fpg == "≥7.0 mmol/L" or rpg == "≥11.1 mmol/L":
-                st.markdown(f"""
-                    - {patient_name} meets the criteria for diabetes
-                    - Consider metformin
-                    - Consider referral to an endocrinologist if necessary
-                """)
-            else:
-                st.markdown(f"""
-                    - {patient_name} is at high risk of diabetes
-                    - Monitor and manage blood glucose levels closely
-                    - Consider referral to an endocrinologist if necessary
-                """)
+    if (hba1c == ['6.0%-6.4% (42-47 mmol/mol)','≥6.4% (48 mmol/mol)']) or (fpg in ['5.6-6.9 mmol/L','≥7.0 mmol/L']) or ausdrisk == '≥12':
+        if hba1c == "≥6.4% (48 mmol/mol)" or fpg == "≥7.0 mmol/L" or rpg == "≥11.1 mmol/L":
+            st.write("Glucose:")
+            st.write(f"- {patient_name} meets the criteria for diabetes")
+            st.write("- Consider metformin")
+            st.write("- Consider referral to an endocrinologist if necessary")
+            st.write(" ")
+        else:
+            st.write("Glucose:")
+            st.write(f"- {patient_name} is at high risk of diabetes")
+            st.write("- Monitor and manage blood glucose levels closely")
+            st.write("- Consider referral to an endocrinologist if necessary")
+            st.write(" ")
 
     if tc == "≥4 mmol/L" or ldl == "≥2 mmol/L" or hdl == "≥1 mmol/L" or non_hdl == "≥2.5 mmol/L" or trig == "≥1.7 mmol/L":
-        with st.expander("Blood Lipids"):
-            st.markdown("""
-                - Consider lipid lowering therapy
-            """)
+        st.write("Blood Lipids:")
+        st.write("- Consider lipid lowering therapy")
+        st.write(" ")
 
     if bmi == '≥35' or neck_circ == "≥40 cm" or daytime_tiredness == "Yes" or snoring == "Yes":
-        with st.expander("Sleep"):
-            st.markdown("""
-                - Consider referral for a sleep study
-                - If mild-moderate sleep apnoea is diagnosed, target weight loss
-                - If severe sleep apnoea is diagnosed, consider CPAP
-            """)
+        st.write("Sleep:")
+        st.write("- Consider referral for a sleep study")
+        st.write("- If mild-moderate sleep apnoea is diagnosed, target weight loss")
+        st.write("- If severe sleep apnoea is diagnosed, consider CPAP")
+        st.write(" ")
+
