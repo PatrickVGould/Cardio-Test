@@ -5,7 +5,7 @@ st.image("mg_logo.png", width=200)
 
 
 # Set up page title and subtitle
-st.title("Positive Cardiometabolic Health Resource")
+st.title("Positive Cardiometabolic Health Resource 💓")
 st.subheader("An early intervention framework for people on psychotropic medication")
 
 # Demographic questions
