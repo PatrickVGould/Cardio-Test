@@ -1,5 +1,19 @@
 import streamlit as st
 
+# Set up the page configuration
+st.beta_set_page_config(
+    page_title="Mindgardens Cardiometabolic Calculator",
+    page_icon=":guardsman:",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
+# Add logo
+logo = st.beta_container()
+with logo:
+    st.image("mg_logo.png", width=200)
+
+
 # Set up page title and subtitle
 st.title("Positive Cardiometabolic Health Resource")
 st.subheader("An early intervention framework for people on psychotropic medication")
