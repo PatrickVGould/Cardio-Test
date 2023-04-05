@@ -97,6 +97,32 @@ if submit:
     st.write("Age: ", age)
     st.write("Sex: ", sex)
 
+    st.write("**Current Values:**")
+    # Table of the current values that were entered by the user that are not blank
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.write("**Lifestyle:**")
+        st.write("Smoking: ", smoking)
+        st.write("Diet: ", diet)
+        st.write("Activity: ", activity)
+        st.write("Weight Increase: ", weight_increase)
+        st.write("Waist Increase: ", waist_increase)   
+    with col2:
+        st.write("**Obesity:**")
+        st.write("BMI: ", BMI)
+        st.write("Waist Circumference: ", waist_circ)
+        st.write("Waist Increase: ", waist_increase)
+        st.write("Weight Increase: ", weight_increase)
+    with col3:
+        st.write("**Blood Pressure:**")
+        st.write("Systolic BP: ", systolic_bp)
+    st.write("Diastolic BP: ", diastolic_bp)
+    st.write("HbA1c: ", HbA1c)
+    st.write("FPG: ", FPG)
+    st.write("AUSDRISK: ", AUSDRISK)
+    st.write("TC: ", TC)
+
+
     st.write(" ")
     st.write("**Recommendations**")
 
