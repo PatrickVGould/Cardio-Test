@@ -175,97 +175,111 @@ if submit:
         <li>Use Mindgardens Tobacco Treatment Framework</li>
         <li>quitnow.gov.au</li>
         <li>icanquit.com.au</li>
-        
+
         #### *Targets:*
         <li>Smoking prevention or cessation</li>
         """, unsafe_allow_html = True)
 
     if diet == "Yes":
-        st.markdown("""
-        **Diet:**
-            - *Interventions:*
-                - Decrease in discretionary foods
-                - Increase in vegetables and legumes/beans
-                - Consider referral to a Dietitian
-                - eatforhealth.gov.au
-            - *Targets:*
-                - Improve quality of diet
-                - Contain energy intake (to stabilise weight)
-        """)
+        st.markdown(body ="""
+        ### **Diet:**
+        #### *Interventions:*
+        <li>Decrease in discretionary foods</li>
+        <li>Increase in vegetables and legumes/beans</li>
+        <li>Consider referral to a Dietitian</li>
+        <li>eatforhealth.gov.au</li>
+        
+        #### *Targets:*
+        <li>Improve quality of diet</li>
+        <li>Contain energy intake (to stabilise weight)</li>
+        """, unsafe_allow_html = True)
     if activity == "No":
-        st.markdown("""
-         **Activity:**
-            - *Interventions:*
-                - Decrease sedentariness
-                - Increase physical activity
-                - Refer to the Physical Activity Guidelines
-                - Consider referral to an Exercise Physiologist
-            - *Targets:*
-                - Physical activity (at least 30 mins on most, preferably all days)
-            """)
+        st.markdown(body = """
+        ### **Activity:**
+        #### *Interventions:*
+        <li>Decrease sedentariness</li>
+        <li>Increase physical activity</li>
+        <li>Refer to the Physical Activity Guidelines</li>
+        <li>Consider referral to an Exercise Physiologist</li>
+        
+        #### *Targets:*
+        <li>Physical activity (at least 30 mins on most, preferably all days)</li>
+        """, unsafe_allow_html = True)
 
     if (bmi in ['25-29','30-34','≥35'] or (bmi in ['≥23', '23-30','30-34','≥35']) and ethnicity=='Yes') or (weight_increase == "Yes") or (sex == "Male" and waist_circ >= 94) or (sex == "Female" and waist_circ >= 80) or (ethnicity == "Yes" and sex == "Male" and waist_circ >= 90) or waist_increase == "Yes":
-        st.markdown("""
-        **Weight and BMI:**
-            - *Interventions:*
-                - Consider metformin and/or GLP receptor agonist""")
+        st.markdown(body = """
+        ### **Weight and BMI:**
+        #### *Interventions:*
+        <li>Consider metformin and/or GLP receptor agonist</li>""", unsafe_allow_html = True)
         if bmi in ["30-34","≥35"]:
-            st.markdown("""     - Consider intensive intervention if BMI is greater than or equal to 30""")
-        st.markdown(""" - *Targets:*
-                - BMI 20-24.9 kg/m2 (<23 kg/m2)*
-                - Waist circumference: <94 cm male (<90 cm)* and <80 cm female
-        """)
+            st.markdown(body = """Consider intensive intervention if BMI is greater than or equal to 30""", unsafe_allow_html = True)
+        st.markdown(body="""#### *Targets:*
+        <li>BMI 20-24.9 kg/m2 (<23 kg/m2)*</li>
+        <li>Waist circumference: <94 cm male (<90 cm)* and <80 cm female</li>
+        """, unsafe_allow_html = True)
 
     if systolic_bp == '≥140 mmHg' or diastolic_bp == '≥90 mmHg':
-        st.markdown("""
-        **Blood Pressure:**
-            - *Interventions:*
-                - Consider antihypertensive medication
-                - Limit salt intake in diet
-            - *Targets:*
-                - <140 mmHg systolic and/or <90 mmHg diastolic
-                - (<130/80 if CVD or diabetes)
-    """)
+        st.markdown(body = """
+        ### **Blood Pressure:**
+        #### *Interventions:*
+        <li>Consider antihypertensive medication</li>
+        <li>Limit salt intake in diet</li>
+        
+        #### *Targets:*
+        <li><140 mmHg systolic and/or <90 mmHg diastolic</li>
+        <li>(<130/80 if CVD or diabetes)</li>
+        """, unsafe_allow_html = True)
 
     if (hba1c == ['6.0%-6.4% (42-47 mmol/mol)','≥6.4% (48 mmol/mol)']) or (fpg in ['5.6-6.9 mmol/L','≥7.0 mmol/L']) or ausdrisk == '≥12':
         if hba1c == "≥6.4% (48 mmol/mol)" or fpg == "≥7.0 mmol/L" or rpg == "≥11.1 mmol/L":
-            st.markdown(f"""
-            **Glucose:**
-                - *Interventions:*
-                    - {patient_name} meets the criteria for diabetes
-                    - Consider metformin
-                    - Consider referral to an endocrinologist
-                - *Targets:*
-                    - HbA1c individualised to the consumer's circumstances
-                    - Generally <7% As per [RACGP Handbook](https://www.racgp.org.au/clinical-resources/clinical-guidelines/key-racgp-guidelines/view-all-racgp-guidelines/diabetes/introduction)
-            """)
+            st.markdown(body = f"""
+            ### **Glucose:**
+            #### *Interventions:*
+            <li>{patient_name} meets the criteria for diabetes</li>
+            <li> Consider metformin</li>
+            <li>Consider referral to an endocrinologist</li>
+            
+            #### *Targets:*
+            <li>HbA1c individualised to the consumer's circumstances</li>
+            <li>Generally <7% As per [RACGP Handbook](https://www.racgp.org.au/clinical-resources/clinical-guidelines/key-racgp-guidelines/view-all-racgp-guidelines/diabetes/introduction)</li>
+            """, unsafe_allow_html = True)
         else:
-            st.markdown(f"""
-            **Glucose:**
-                - *Interventions:*
-                    - Consider metformin
-                    - Consider referral to an endocrinologist if necessary
-                - *Targets:*
-                    - It is vital to prevent or delay onset of diabetes by targeting:
-                        - HbA1c <6.0% (<42 mmol/mol)
-                        - FPG <5.6 mmol/L
-            """)
+            st.markdown(body = f"""
+            ### **Glucose:**
+            #### *Interventions:*
+            <li>Consider metformin</li>
+            <li>Consider referral to an endocrinologist if necessary</li>
+            
+            #### *Targets:*
+            It is vital to prevent or delay onset of diabetes by targeting:
+            <li>HbA1c <6.0% (<42 mmol/mol)</li>
+            <li>FPG <5.6 mmol/L</li>
+            """, unsafe_allow_html = True)
 
     if tc == "≥4 mmol/L" or ldl == "≥2 mmol/L" or hdl == "≥1 mmol/L" or non_hdl == "≥2.5 mmol/L" or trig == "≥1.7 mmol/L":
-        st.markdown("""
-        **Blood Lipids:**
-            - Consider lipid lowering therapy
-        """)
+        st.markdown(body = """
+        ### **Blood Lipids:**
+        #### *Interventions:*
+        <li>Consider lipid lowering therapy</li>
+
+        #### *Targets:*
+        <li>TC <4 mmol/L</li>
+        <li>LDL <2.0 mmol/L (<1.8 if CVD or diabetes)</li>
+        <li>HDL ≥1.0 mmol/L</li>
+        <li>non-HDL <2.5 mmol/L</li>
+        <li>TRIG <1.7 mmol/L</li>
+        """, unsafe_allow_html = True)
 
     if bmi == '≥35' or neck_circ == "≥40 cm" or daytime_tiredness == "Yes" or snoring == "Yes":
-        st.markdown("""
-        **Sleep:**
-            - *Interventions:*
-                - Consider referral for a sleep study
-                - If mild-moderate sleep apnoea is diagnosed, target weight loss
-                - If severe sleep apnoea is diagnosed, consider CPAP
-            - *Targets:*
-                - Improved alertness
-                - Reduced or resolved OSA
+        st.markdown(body = """
+        ### **Sleep:**
+        #### *Interventions:*
+        <li>Consider referral for a sleep study</li>
+        <li>If mild-moderate sleep apnoea is diagnosed, target weight loss</li>
+        <li>If severe sleep apnoea is diagnosed, consider CPAP</li>
+        
+        #### *Targets:*
+        <li>Improved alertness</li>
+        <li>Reduced or resolved OSA</li>
         """)
 
