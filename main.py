@@ -205,7 +205,7 @@ with col2:
                 - Consider referral to an Exercise Physiologist
             """)
 
-    if any([condition for condition in [bmi in ['25-29', '30-34', '≥35'], bmi in ['≥23', '23-30', '30-34', '≥35'] and ethnicity == 'Yes', weight_increase == "Yes", sex == "Male" and waist_circ >= 94, sex == "Female" and waist_circ >= 80, ethnicity == "Yes" and sex == "Male" and waist_circ >= 90, waist_increase == "Yes"]]):
+    if ([condition for condition in [bmi in ['25-29', '30-34', '≥35'], bmi in ['≥23', '23-30', '30-34', '≥35'] and ethnicity == 'Yes', weight_increase == "Yes", sex == "Male" and waist_circ == "≥94", sex == "Female" and waist_circ == "≥80", ethnicity == "Yes" and sex == "Male" and waist_circ == "≥90", waist_increase == "Yes"]]):
         with st.expander("Weight and BMI"):
             st.markdown("""
                 - Consider metformin and/or GLP receptor agonist""")
