@@ -171,12 +171,12 @@ if submit:
         st.markdown(body = """
         ### **Smoking:**
         #### *Interventions:*
-        <li><p>Individualised smoking cessation program</p></li>
-        <li><p>Use Mindgardens Tobacco Treatment Framework</p></li>
-        <li><p>quitnow.gov.au</p></li>
-        <li><p>icanquit.com.au</p></li>
+        <li>Individualised smoking cessation program</li>
+        <li>Use Mindgardens Tobacco Treatment Framework</li>
+        <li>quitnow.gov.au</li>
+        <li>icanquit.com.au</li>
         #### *Targets:*
-        <li><p>Smoking prevention or cessation</p></li>
+        <li>Smoking prevention or cessation</li>
         """, unsafe_allow_html = True)
 
     if diet == "Yes":
