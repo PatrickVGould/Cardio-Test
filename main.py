@@ -105,11 +105,14 @@ if submit:
 
     if smoking == "Yes":
         st.write("Smoking:")
+        st.write("*Interventions:*")
         st.write("- Individualised smoking cessation program")
         st.write("- Use Mindgardens Tobacco Treatment Framework")
         st.write("- quitnow.gov.au")
         st.write("- icanquit.com.au")
         st.write(" ")
+        st.write("*Targets:*")
+        st.write("Smoking prevention or cessation")
 
     if diet == "Yes":
         st.write("Diet:")
