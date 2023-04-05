@@ -10,7 +10,7 @@ st.subheader("An early intervention framework for people on psychotropic medicat
 
 # Demographic questions
 st.header("Demographics")
-patient_name = st.text_input("What is the person's name?")
+patient_name = st.text_input(label = "What is the person's name?", help = "This will be used to personalise the report at the end and will not be stored or shared with anyone else.")
 col1, col2, col3 = st.columns(3)
 with col1:
     sex = st.radio("What is the person's sex?", ["Male", "Female", "Other"])
