@@ -116,12 +116,26 @@ if submit:
     with col3:
         st.write("**Blood Pressure:**")
         st.write("Systolic BP: ", systolic_bp)
-    st.write("Diastolic BP: ", diastolic_bp)
-    st.write("HbA1c: ", HbA1c)
-    st.write("FPG: ", FPG)
-    st.write("AUSDRISK: ", AUSDRISK)
-    st.write("TC: ", TC)
-
+        st.write("Diastolic BP: ", diastolic_bp)
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.write("**Glucose:**")
+        st.write("HbA1c: ", HbA1c)
+        st.write("FPG: ", FPG)
+        st.write("AUSDRISK: ", AUSDRISK)
+    with col2:
+        st.write("**Blood Lipids:**")
+        st.write("TC: ", TC)
+        st.write("LDL: ", LDL)
+        st.write("HDL: ", HDL)
+        st.write("RPG: ", RPG)
+        st.write("non-HDL: ", non_HDL)
+        st.write("TRIG: ", TRIG)
+    with col3:
+        st.write("**Sleep:**")
+        st.write("Neck Circumference: ", neck_circ)
+        st.write("Daytime Tiredness: ", daytime_tiredness)
+        st.write("Snoring: ", snoring)
 
     st.write(" ")
     st.write("**Recommendations**")
