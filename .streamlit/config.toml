@@ -1,9 +1,7 @@
 [theme]
+base = 'light'
 # Primary accent for interactive elements
 primaryColor = '#4058FF'
-
-# Background color for the main content area
-backgroundColor = '#F7FFF7'
 
 # Color used for almost all text
 textColor = '#3B3B3B'

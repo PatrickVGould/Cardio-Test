@@ -5,7 +5,7 @@ st.image("mg_logo.png", width=200)
 
 
 # Set up page title and subtitle
-st.title("Positive Cardiometabolic Health Resource 💓")
+st.title("Positive Cardiometabolic Health Resource")
 st.subheader("An early intervention framework for people on psychotropic medication")
 
 # Demographic questions
@@ -178,6 +178,7 @@ if submit:
 
         #### *Targets:*
         <li>Smoking prevention or cessation</li>
+        
         """, unsafe_allow_html = True)
 
     if diet == "Yes":
@@ -192,6 +193,7 @@ if submit:
         #### *Targets:*
         <li>Improve quality of diet</li>
         <li>Contain energy intake (to stabilise weight)</li>
+
         """, unsafe_allow_html = True)
     if activity == "No":
         st.markdown(body = """
@@ -204,6 +206,7 @@ if submit:
         
         #### *Targets:*
         <li>Physical activity (at least 30 mins on most, preferably all days)</li>
+
         """, unsafe_allow_html = True)
 
     if (bmi in ['25-29','30-34','≥35'] or (bmi in ['≥23', '23-30','30-34','≥35']) and ethnicity=='Yes') or (weight_increase == "Yes") or (sex == "Male" and waist_circ >= 94) or (sex == "Female" and waist_circ >= 80) or (ethnicity == "Yes" and sex == "Male" and waist_circ >= 90) or waist_increase == "Yes":
@@ -216,6 +219,7 @@ if submit:
         st.markdown(body="""#### *Targets:*
         <li>BMI 20-24.9 kg/m2 (<23 kg/m2)*</li>
         <li>Waist circumference: <94 cm male (<90 cm)* and <80 cm female</li>
+
         """, unsafe_allow_html = True)
 
     if systolic_bp == '≥140 mmHg' or diastolic_bp == '≥90 mmHg':
@@ -228,6 +232,7 @@ if submit:
         #### *Targets:*
         <li><140 mmHg systolic and/or <90 mmHg diastolic</li>
         <li>(<130/80 if CVD or diabetes)</li>
+
         """, unsafe_allow_html = True)
 
     if (hba1c == ['6.0%-6.4% (42-47 mmol/mol)','≥6.4% (48 mmol/mol)']) or (fpg in ['5.6-6.9 mmol/L','≥7.0 mmol/L']) or ausdrisk == '≥12':
@@ -242,6 +247,7 @@ if submit:
             #### *Targets:*
             <li>HbA1c individualised to the consumer's circumstances</li>
             <li>Generally <7% As per [RACGP Handbook](https://www.racgp.org.au/clinical-resources/clinical-guidelines/key-racgp-guidelines/view-all-racgp-guidelines/diabetes/introduction)</li>
+
             """, unsafe_allow_html = True)
         else:
             st.markdown(body = f"""
@@ -254,6 +260,7 @@ if submit:
             It is vital to prevent or delay onset of diabetes by targeting:
             <li>HbA1c <6.0% (<42 mmol/mol)</li>
             <li>FPG <5.6 mmol/L</li>
+
             """, unsafe_allow_html = True)
 
     if tc == "≥4 mmol/L" or ldl == "≥2 mmol/L" or hdl == "≥1 mmol/L" or non_hdl == "≥2.5 mmol/L" or trig == "≥1.7 mmol/L":
@@ -268,6 +275,7 @@ if submit:
         <li>HDL ≥1.0 mmol/L</li>
         <li>non-HDL <2.5 mmol/L</li>
         <li>TRIG <1.7 mmol/L</li>
+
         """, unsafe_allow_html = True)
 
     if bmi == '≥35' or neck_circ == "≥40 cm" or daytime_tiredness == "Yes" or snoring == "Yes":
@@ -281,5 +289,6 @@ if submit:
         #### *Targets:*
         <li>Improved alertness</li>
         <li>Reduced or resolved OSA</li>
-        """)
+        
+        """, unsafe_allow_html = True)
 
